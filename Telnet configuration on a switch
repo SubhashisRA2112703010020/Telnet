@@ -1,0 +1,16 @@
+(i) Telnet configuration on a switch
+1.Configure enable password or enable secret password on the switch.
+Switch>enable
+Switch#config terminal
+Switch(config)#enable password admin
+
+2.Configure a VLAN interface on the switch
+Switch(config)#int VLAN1
+Switch(config-if)#ipaddress 10.0.0.20 255.0.0.0
+Switch(config-if)#no shut
+Switch(config-if)#exit
+
+4.	Configure a Telnet password for remote access.
+Switch(config)#line vty 0 15
+Switch(config-line)#password cisco
+Switch(config-line)#login
