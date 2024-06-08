@@ -1,0 +1,14 @@
+ (ii) Telnet Configuration on Router
+1.Configure enable password or enable secret password on the router
+Router>en
+Router#config term
+Router(config)#enable password admin
+
+2.Configure IP addresses on the admin PC and interface fa0/0 of the router
+Router(config)#int fa0/0
+Router(config-if)#ip adress 10.0.0.1  255.0.0.0
+Router(config-if)#no shut
+
+3.Configure VLAN interface on the router.This interface allows for remote access on a switch or router via protocols such as Telnet or Secure Shell (SSH)
+Router(config)#int VLAN1
+Router(config-if)#no shutdown
